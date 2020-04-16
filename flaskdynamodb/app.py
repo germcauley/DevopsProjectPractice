@@ -15,8 +15,8 @@ def get_items():
 def put_items():
     aws_controller.put_items()
     return jsonify({
-            'Artist':"Bach",
-            'SongTitle':'Goldberg Variations'
+            'Artist':"Beethoven",
+            'SongTitle':'Ode to Joy'
             } )
 
 if __name__ == '__main__':
