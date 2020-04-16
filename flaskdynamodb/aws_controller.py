@@ -9,12 +9,12 @@ def get_items():
     )
 
 
-def put_items():
-    dynamo_client.put_item(
-        TableName='YourTestTable',
-        Item={
-            'Artist':{'S': "Bach"},
-            'SongTitle':{'S':'Goldberg Variations'}
-            }
-    )
+# def put_items():
+#     dynamo_client.put_item(
+#         TableName='YourTestTable',
+#         Item={
+#             'Artist':{'S': "Mozart"},
+#             'SongTitle':{'S':'Turkish March'}
+#             }
+#     )
 
