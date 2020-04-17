@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, json
 import aws_controller,os
 from flask import Flask, url_for, render_template, redirect,request
 from forms import ContactForm
@@ -14,7 +14,9 @@ def index():
 
 @app.route('/get-items')
 def get_items():
-    return jsonify(aws_controller.get_items())
+    item = aws_controller.get_items()
+    # return jsonify(aws_controller.get_items())
+    return render_template('index.html',item = item)
 
 @app.route("/post", methods=['GET', 'POST'])
 def put_items():
