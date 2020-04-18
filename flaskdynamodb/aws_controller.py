@@ -5,16 +5,16 @@ dynamo_client = boto3.client('dynamodb', region_name='eu-west-1')
 
 def get_items():
     return dynamo_client.scan(
-        TableName='YourTestTable'
+        TableName='MessageBoard'
     )
 
 
-def put_items():
+def put_items(name,message):
     dynamo_client.put_item(
-        TableName='YourTestTable',
+        TableName='MessageBoard',
         Item={
-            'Artist':{'S': "Bach"},
-            'SongTitle':{'S':'Goldberg Variations'}
-            } 
+            'User':{'S': name},
+            'Comments':{'S':message}
+            }
     )
-    
+
