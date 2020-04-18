@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Message app</h1>
+<p>You can leave a message either as an anonymous user or with your name</p>
+<ul>
+  <li><a href="{{ url_for('post_message') }}">Leave a message<i class="fas fa-chevron-right"></i></a></li>
+</ul>
+
+<div>
+    <ul>
+       {% for x in item.Items %}
+        <li>
+            <p>{{ x.User['S'] }}</p>
+            <p>{{ x.Comments['S'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
