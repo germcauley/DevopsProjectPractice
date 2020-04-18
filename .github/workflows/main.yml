@@ -27,6 +27,9 @@ jobs:
       steps:
         - name: Clone the repo
           uses: actions/checkout@v1
+        
+        - name: CD
+          uses: cd flaskdynamodb
                   
         - name:  ZIP the files into a deployment package, exclude the git info
           run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
