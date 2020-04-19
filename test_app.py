@@ -5,7 +5,7 @@ import aws_controller
 def test_apphomepage():
     response = app.test_client().get('/')
 
-    assert response.status_code == 200
+    assert response.status_code == 404
     
 
 def test_appcommentpage1():
