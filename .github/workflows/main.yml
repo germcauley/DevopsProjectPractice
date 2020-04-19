@@ -32,6 +32,14 @@ jobs:
         - name: Clone the repo
           uses: actions/checkout@v1
         
+        - name: Setup venv
+          run: python3 -m venv myenv
+        
+        - name: Setup venv
+          run: source myenv/bin/activate
+        
+        - name: Install reqs
+          run: pip install -r requirements.txt
           
         - name: Run Unittests
           run: py.test
