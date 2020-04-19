@@ -31,7 +31,12 @@ jobs:
       steps:
         - name: Clone the repo
           uses: actions/checkout@v1
-      
+        
+        - name: Test Build
+          run: pip install -r requirements.txt
+          
+        - name: Run Unittests
+          run: py.test
                   
         - name:  ZIP the files into a deployment package, exclude the git info
           run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
@@ -49,6 +54,7 @@ jobs:
         - name: Print message on completion of CI pipeline
           run: echo "CI Pipeline part finished successfully!! :)"
           
+        
 
  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
      my_cd_pipeline:
@@ -73,6 +79,9 @@ jobs:
 
          - name: Deploy our new Application Version
            run : aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
+         
+         - name: Run Unittests
+           run :
            
          - name: Print nice message on completion of CD Pipeline
            run : echo "CD Pipeline part finished successfully"  
