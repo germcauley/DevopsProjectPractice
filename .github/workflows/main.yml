@@ -32,6 +32,9 @@ jobs:
         - name: Clone the repo
           uses: actions/checkout@v1
         
+        - name: Install python
+          run: apt-get install python3-venv
+        
         - name: Setup venv
           run: python3 -m venv myenv
         
