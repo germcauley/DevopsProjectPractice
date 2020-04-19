@@ -32,8 +32,6 @@ jobs:
         - name: Clone the repo
           uses: actions/checkout@v1
         
-        - name: Test Build
-          run: pip install -r requirements.txt
           
         - name: Run Unittests
           run: py.test
