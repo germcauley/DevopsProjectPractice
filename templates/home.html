@@ -5,19 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to Message app</h1>
-<p>You can leave a message either as an anonymous user or with your name</p>
-<ul>
-  <li><a href="{{ url_for('post_message') }}">Leave a message<i class="fas fa-chevron-right"></i></a></li>
-</ul>
+<div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm"><h1>Welcome to Message app</h1>
+        <p>You can leave a message either as an anonymous user or with your name</p></div>
+    
+    
+    <div class="col-sm"></div>
+</div>
 
-<div>
+
+
+  <h2><a href="{{ url_for('post_message') }}">Leave a message<i class="fas fa-chevron-right"></i></a></h2>
+
+
+<div class= "messages">
     <ul>
        {% for x in item.Items %}
-        <li>
-            <p>{{ x.User['S'] }}</p>
-            <p>{{ x.Comments['S'] }}</p>
-        </li>
+    <div class= row>
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <li  class="message">     
+                <p class="user">{{ x.User['S'] }}</p>
+                <p class=contente">{{ x.Comments['S'] }}</p>    
+           </li>
+        </div>
+        <div class="col-sm"></div>
+    </div>
         {% endfor %}
     </ul>
 </div>

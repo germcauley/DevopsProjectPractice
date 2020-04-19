@@ -1,0 +1,53 @@
+/* .home-template .container {
+  padding: 40px;
+}
+
+.home-template a {
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+  color: #3979a4;
+}
+
+.home-template h1 {
+  margin-bottom: 30px;
+}
+
+.home-template i {
+  font-size: .9em;
+} */
+
+body{
+  
+  font-family: 'Raleway', sans-serif;
+}
+.messages{
+  
+  background-color: rgba(202, 208, 211, 0.301);
+}
+
+.message{
+  list-style: none;
+  color:black;
+  background-color: rgba(180, 231, 255, 0.568);
+  border-radius: 10%;
+}
+  
+
+
+.user{
+  font-family: 'Raleway', sans-serif;
+  padding: 3px;;
+  margin: 3px;
+}
+
+.content{
+  padding: 3px;
+  margin: 3px;
+}
+
+#message{
+  font-family: 'Raleway', sans-serif;
+}
