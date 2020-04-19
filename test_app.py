@@ -5,8 +5,7 @@ import aws_controller
 def test_apphomepage():
     response = app.test_client().get('/')
 
-    if response.status_code == 200:
-        sys.exit(1)
+    assert response.status_code == 200
     
 
 def test_appcommentpage1():
