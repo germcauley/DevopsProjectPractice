@@ -18,3 +18,12 @@ def put_items(name,message):
             }
     )
 
+def delete_item(name,message):
+      dynamo_client.delete_item(
+        TableName='MessageBoard',
+        Item={
+            'User':{'S': name},
+            'Comments':{'S':message}
+            }
+    )
+

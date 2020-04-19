@@ -7,10 +7,6 @@ application = app = Flask(__name__)
 app.config['SECRET_KEY'] = 'any secret string'
 
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html',
-#                            template='form-template')
 
 @app.route('/')
 def home():
@@ -26,16 +22,10 @@ def post_message():
     if request.method == 'POST':
         name = request.form.get('name')
         message = request.form.get('body')
-        # add to the DB
+        # otherwise add to the DB
         aws_controller.put_items(name,message)
         return redirect(url_for('success'))
         
-         # displays parameters once posted to DB
-        # return jsonify({
-        #     'Artist':name,
-        #     'Message':message
-        #     } )
-    
   
     return render_template('post_message.html',form=form,template='form-template')
 
