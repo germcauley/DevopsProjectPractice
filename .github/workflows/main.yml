@@ -29,6 +29,8 @@ jobs:
       runs-on: [ubuntu-latest]
       
       steps:
+        - name: Clone the repo
+          uses: actions/checkout@v1
                   
         - name:  ZIP the files into a deployment package, exclude the git info
           run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
