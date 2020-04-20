@@ -82,14 +82,20 @@ jobs:
          - name: Clone the repo
            uses: actions/checkout@v1
            
-         - name: Install chromium
-           run: sudo apt-get install chromium-chromedriver
-         
-#          - name: Download Chromedriver
-#            run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
+         - name: Install chrome
+           run: sudo apt-get -y install google-chrome-stable
+                
+         - name: Download Chromedriver
+           run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
            
-#          - name: Unzip to chromedriver directory
-#            run: unzip chromedriver_linux64.zip -d chromedriver
+         - name: Unzip to chromedriver directory
+           run: unzip chromedriver_linux64.zip 
+         
+         - name: Move to Path
+           run: sudo mv chromedriver /usr/bin/chromedriver
+         
+         - name: Change owner to root
+           run: sudo chown root:root /usr/bin/chromedriver
          
          - name: Install requirements
            run: pip install -r requirements.txt
