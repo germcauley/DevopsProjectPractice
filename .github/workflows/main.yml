@@ -81,12 +81,15 @@ jobs:
            
          - name: Clone the repo
            uses: actions/checkout@v1
-         
-         - name: Download Chromedriver
-           run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
            
-         - name: Unzip to chromedriver directory
-           run: unzip chromedriver_linux64.zip -d chromedriver
+         - name: Install chromium
+           run: sudo apt-get install chromium-chromedriver
+         
+#          - name: Download Chromedriver
+#            run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
+           
+#          - name: Unzip to chromedriver directory
+#            run: unzip chromedriver_linux64.zip -d chromedriver
          
          - name: Install requirements
            run: pip install -r requirements.txt
@@ -94,11 +97,11 @@ jobs:
          - name: Run QA Automation tests
            run: sudo python selenium_tests.py
 
-         - name: Delete chromedriver zip
-           run: rm -r chromedriver_linux64.zip
+#          - name: Delete chromedriver zip
+#            run: rm -r chromedriver_linux64.zip
           
-         - name: Delete chromedriver folder
-           run: rm -r chromedriver/
+#          - name: Delete chromedriver folder
+#            run: rm -r chromedriver/
            
          - name: Print nice message on completion of CD Pipeline
            run : echo "CD Pipeline part finished successfully"  
