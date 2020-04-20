@@ -78,6 +78,9 @@ jobs:
 
          - name: Deploy our new Application Version
            run : aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
+           
+         - name: Clone the repo
+           uses: actions/checkout@v1
          
          - name: Download Chromedriver
            run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
