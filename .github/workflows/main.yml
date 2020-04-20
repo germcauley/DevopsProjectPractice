@@ -83,7 +83,7 @@ jobs:
            run: wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
            
          - name: Unzip to chromedriver directory
-           run: unzip chromedriver_linux.zip -d chromedriver
+           run: unzip chromedriver_linux64.zip -d chromedriver
            
          - name: Run QA Automation tests
            run: sudo python selenium_tests.py
