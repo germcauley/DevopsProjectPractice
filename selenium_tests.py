@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-driver = webdriver.Chrome("chromedriver/chromedriver")
+driver = webdriver.Chrome("chromedriver/")
 
 # Visit my app hosted on aws
 driver.get("http://devopsassignment-env.eba-mx9qvtf8.eu-west-1.elasticbeanstalk.com/")
