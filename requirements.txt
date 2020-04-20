@@ -10,7 +10,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 jmespath==0.9.5
 MarkupSafe==1.1.1
-more-itertools==8.2.0
+more-itertools
 packaging==20.3
 pluggy==0.13.1
 py==1.8.1
