@@ -87,6 +87,9 @@ jobs:
            
          - name: Unzip to chromedriver directory
            run: unzip chromedriver_linux64.zip -d chromedriver
+         
+         - name: Install requirements
+           run: pip install -r requirements.txt
            
          - name: Run QA Automation tests
            run: sudo python selenium_tests.py
