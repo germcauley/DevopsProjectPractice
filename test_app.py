@@ -5,13 +5,10 @@ import aws_controller
 
 class TestStringMethods(unittest.TestCase):
 
-<<<<<<< HEAD
+
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOxO')
-=======
-    assert response.status_code == 200
-    
->>>>>>> 80f2c21dca0b5ff46fb73b3bd82a614cacc291d5
+
 
 
     # def test_apphomepage(self):
