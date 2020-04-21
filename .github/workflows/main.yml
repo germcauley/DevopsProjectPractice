@@ -20,9 +20,27 @@ on:
       - master
         
         
-    
+#UPDATE JIRA
+jobs:
+  test-transition-issue:
+    name: Update Jira deployment ticket
+    runs-on: ubuntu-latest
+    steps:
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        
+    - name: Transition issue
+      id: transition
+      uses: atlassian/gajira-transition@master
+      with:
+        issue: DEV-23
+        transition: "In progress"  
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# CI WORKFLOW
 jobs:
  
      my_ci_pipeline:
@@ -50,7 +68,7 @@ jobs:
           
         
 
- # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+ # CD WORKFLOW
      my_cd_pipeline:
        runs-on: ubuntu-latest
        needs: [my_ci_pipeline]
@@ -105,12 +123,6 @@ jobs:
            
          - name: Run QA Automation tests
            run: sudo python selenium_tests.py
-
-#          - name: Delete chromedriver zip
-#            run: rm -r chromedriver_linux64.zip
-          
-#          - name: Delete chromedriver folder
-#            run: rm -r chromedriver/
            
          - name: Print nice message on completion of CD Pipeline
            run : echo "CD Pipeline part finished successfully"  
