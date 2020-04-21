@@ -3,12 +3,13 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-# service_log_path = "{}/chromedriver.log".format(outputdir)
-# service_args = ['--verbose']
-driver = webdriver.Chrome('/usr/bin/chromedriver',
-        chrome_options=options)
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+driver = webdriver.Chrome('/usr/bin/chromedriver',chrome_options=chrome_options)
+
 
 # Visit my app hosted on aws
 driver.get("http://devopsassignment-env.eba-mx9qvtf8.eu-west-1.elasticbeanstalk.com/")
