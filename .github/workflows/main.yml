@@ -125,3 +125,22 @@ jobs:
            
          - name: Print nice message on completion of CD Pipeline
            run : echo "CD Pipeline part finished successfully"  
+           
+   #UPDATE JIRA
+  test-close-issue:
+     name: Close Jira deployment ticket
+     runs-on: ubuntu-latest
+     steps:
+      - name: Login
+        uses: atlassian/gajira-login@master
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        
+      - name: Transition issue
+        id: transition
+        uses: atlassian/gajira-transition@master
+        with:
+          issue: DEV-23
+          transition: "Done"  
