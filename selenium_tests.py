@@ -8,9 +8,7 @@ options.binary_location = '/opt/google/chrome/google-chrome'
 # service_log_path = "{}/chromedriver.log".format(outputdir)
 # service_args = ['--verbose']
 driver = webdriver.Chrome('/usr/bin/chromedriver',
-        chrome_options=options,
-        service_args=service_args,
-        service_log_path=service_log_path)
+        chrome_options=options)
 
 # Visit my app hosted on aws
 driver.get("http://devopsassignment-env.eba-mx9qvtf8.eu-west-1.elasticbeanstalk.com/")
