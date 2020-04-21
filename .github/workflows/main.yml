@@ -84,9 +84,12 @@ jobs:
            
          - name: Install chrome
            run: sudo apt-get -y install google-chrome-stable
+           
+         - name: List Google chrone version
+           run: google-chrome --version
                 
          - name: Download Chromedriver
-           run: wget https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip.zip
+           run: wget https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip
            
          - name: Unzip to chromedriver directory
            run: unzip chromedriver_linux64.zip 
