@@ -4,7 +4,6 @@ import time
 
 
 options = webdriver.ChromeOptions()
-options.binary_location = '/opt/google/chrome/google-chrome'
 options.add_argument('--headless')
 # service_log_path = "{}/chromedriver.log".format(outputdir)
 # service_args = ['--verbose']
