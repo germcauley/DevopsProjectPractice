@@ -19,7 +19,7 @@ title = driver.find_element_by_tag_name('h1')
 messagelink = driver.find_element_by_tag_name('h1')
 time.sleep(5)
 
-assert title.text =="Welcome to Message app"
+assert title.text =="Welcome to Message app Fail"
 
 # assert messagelink.text == "Hello"
 driver.close()
