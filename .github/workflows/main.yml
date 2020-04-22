@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+
 # Github Actions Workflow to Deploy Flask App to ElasticBeanstalk
 
 name: 1ITTralee-Devops-Assignment-Pipeline
@@ -142,5 +142,5 @@ jobs:
         id: transition
         uses: atlassian/gajira-transition@master
         with:
-          issue: DEV-23
+          issue: DEV-25 #This should be updated before anything is pushed to master so the correct JIRA ticket is updated.
           transition: "Done"  
