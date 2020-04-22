@@ -129,6 +129,7 @@ jobs:
    #UPDATE JIRA
   test-close-issue:
      name: Close Jira deployment ticket
+     needs: my_cd_pipeline
      runs-on: ubuntu-latest
      steps:
       - name: Login
