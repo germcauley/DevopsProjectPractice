@@ -1,6 +1,6 @@
 # test_app.py
 import unittest
-from app import app
+from application import app
 import aws_controller
 
 class TestStringMethods(unittest.TestCase):
