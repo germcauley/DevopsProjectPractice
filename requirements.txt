@@ -13,7 +13,7 @@ MarkupSafe==1.1.1
 more-itertools
 packaging==20.3
 pluggy==0.13.1
-py==1.8.1
+py==1.10.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
 python-dotenv==0.12.0
